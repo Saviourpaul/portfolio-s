@@ -55,7 +55,7 @@
       <div class="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-md">
         <div aria-hidden="true" class="absolute -inset-3 rotate-3 rounded-[2rem] bg-blue-200/70 sm:-inset-4 sm:rounded-[2.5rem]"></div>
         <div class="relative rounded-[1.75rem] border border-white bg-white p-2 shadow-xl shadow-blue-950/10 sm:rounded-[2rem] sm:p-3">
-          <img src="../images/my image.jpeg" alt="Portrait of Saviour" width="960" height="960" fetchpriority="high"
+          <img src="images/my image.jpeg" alt="Portrait of Saviour" width="960" height="960" fetchpriority="high"
             class="aspect-square w-full rounded-[1.25rem] object-cover sm:rounded-[1.5rem]">
         </div>
         
@@ -86,46 +86,7 @@
     </section>
   </main>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
-
-    function setMenuOpen(isOpen) {
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-      mobileMenu.classList.toggle('hidden', !isOpen);
-      mobileMenu.classList.toggle('flex', isOpen);
-      menuIcon.classList.toggle('hidden', isOpen);
-      closeIcon.classList.toggle('hidden', !isOpen);
-    }
-
-    menuToggle.addEventListener('click', () => {
-      setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => setMenuOpen(false));
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
-        setMenuOpen(false);
-        menuToggle.focus();
-      }
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    });
-
-    window.matchMedia('(min-width: 48rem)').addEventListener('change', (event) => {
-      if (event.matches) setMenuOpen(false);
-    });
-  </script>
+  
 </body>
 
 </html>
